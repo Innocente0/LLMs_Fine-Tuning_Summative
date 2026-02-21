@@ -1,4 +1,4 @@
-# 🩺 Medical Q&A Assistant  
+# Medical Q&A Assistant  
 **Domain-Specific LLM Fine-Tuning with LoRA (TinyLlama + MedQuAD)**
 
 This repository contains a complete end-to-end pipeline for fine-tuning a Large Language Model (LLM) into a **medical question-answering assistant** using **parameter-efficient fine-tuning (LoRA)** on the **MedQuAD** dataset.  
@@ -13,9 +13,7 @@ The implementation is designed to run on **Google Colab** with limited GPU resou
 
 > ⚠️ **Disclaimer:** This assistant is for **educational/demo purposes only**. It does **not** provide medical advice, diagnosis, or treatment.
 
----
-
-## 🧠 1. Project Overview
+## 1. Project Overview
 
 The goal of this project is to specialize a pre-trained LLM (TinyLlama-1.1B-Chat) for the **healthcare domain**, specifically medical question answering.
 
@@ -32,20 +30,18 @@ By fine-tuning on **MedQuAD**, this project aims to:
 - Encourage **safe and conservative behavior**  
 - Stay focused on **medical topics only**
 
----
-
-## 📊 2. Dataset: MedQuAD
+## 2. Dataset: MedQuAD
 
 **Dataset:** MedQuAD – Medical Question Answering Dataset (NIH-derived)  
 
-Key characteristics (as used in this project):
+Key characteristics:
 
-- ~16,000 original medical Q&A pairs  
+- **16,000** original medical Q&A pairs  
 - **3,000 cleaned samples** selected for training  
 - Columns used:
   - `question`
   - `answer`
-  - `focus_area` (optional, if available)
+  - `focus_area`
 
 ### 2.1 Preprocessing Steps
 
@@ -54,21 +50,20 @@ In the notebook, the following preprocessing is applied:
 - Remove rows with missing `question` or `answer`  
 - Strip extra whitespace and normalize text  
 - Remove duplicate Q/A pairs  
-- Filter out extremely short or noisy entries  
-- Optionally sample ~3,000 examples for Colab efficiency  
+- Filter out extremely short entries  
+- 3,000 examples for Colab efficiency  
 
 ### 2.2 Instruction–Response Formatting
 
 Each example is converted into an instruction-style prompt:
 
-```text
-### Instruction:
+**Instruction:**
 [Topic: HIV] What are the symptoms of HIV?
 
-### Response:
+**Response:**
 Early HIV symptoms may include fever, fatigue, swollen lymph nodes...
 
-Author: Aline Innocente
-Project: LLM Fine-Tuning Summative Assessment
+Student: Aline Innocente
+Project: Medical Q&A LLM Fine-Tuning Summative Assessment
 
-This project demonstrates modern LLM fine-tuning practices (LoRA + quantization) applied to a real-world domain (healthcare), with clear metrics, safety considerations, and an interactive user experience.
+**This project demonstrates modern LLM fine-tuning practices (LoRA + quantization) applied in healthcare, with clear metrics, safety considerations, and an interactive user experience.**
